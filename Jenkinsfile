@@ -15,9 +15,9 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-		        sh "eval \$(aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/g3c7k1t7) && sleep 2"
-                sh "docker build . -t upgrad-app-karthickeyan-assignment"
-                sh "docker push public.ecr.aws/g3c7k1t7/upgrad-app-karthickeyan-assignment:latest"
+		        sh "eval \$(aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 915501983696.dkr.ecr.us-east-1.amazonaws.com) && sleep 2"
+                sh "docker build -t venkatc4assgnmnt ."
+                sh "docker push 915501983696.dkr.ecr.us-east-1.amazonaws.com/venkatc4assgnmnt:latest"
             }
         }
      }
